@@ -1,0 +1,46 @@
+function init(self)
+	self.score = 0
+	self.score_node = gui.get_node("score")
+
+	
+end
+
+local function scale_down(self, node)
+	local s = 1.0
+	gui.animate(node, gui.PROP_SCALE, vmath.vector4(s, s, s, 0), gui.EASING_OUT, 0.05)
+end
+
+function on_message(self, message_id, message, sender)
+	if message_id == hash("add_score") then
+		print("ok")
+		local s = 1.2
+		self.score = self.score + message.amount
+		gui.set_text(self.score_node, tostring(self.score))
+		gui.animate(self.score_node, gui.PROP_SCALE, vmath.vector4(s, s, s, 0), gui.EASING_OUT, 0.1, 0.0, scale_down)
+	end
+end
+
+function on_input(self, action_id, action)
+	if action_id == hash("touch")then 
+		local strat = gui.get_node("box")
+		local strat1 = gui.get_node("box1")
+		local strat2 = gui.get_node("box2")
+		local strat3 = gui.get_node("box3")
+		
+		if gui.pick_node(strat, action.x, action.y) then
+			msg.post("parallax:/spaceship#script", "upp")
+		end
+		if gui.pick_node(strat1, action.x, action.y) then
+			print("right")
+			msg.post("parallax:/spaceship#script", "rightt")
+		end
+		if gui.pick_node(strat2, action.x, action.y) then
+			print("left")
+			msg.post("parallax:/spaceship#script", "leftt")
+		end
+		if gui.pick_node(strat3, action.x, action.y) then
+			msg.post("parallax:/spaceship#script", "downn")
+		end
+	end
+
+end

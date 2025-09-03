@@ -1,0 +1,100 @@
+script: "/main/main.gui_script"
+fonts {
+  name: "score"
+  font: "/fonts/score.font"
+}
+nodes {
+  position {
+    x: 91.0
+    y: 680.0
+  }
+  size {
+    x: 200.0
+    y: 100.0
+  }
+  type: TYPE_TEXT
+  text: "0"
+  font: "score"
+  id: "score"
+}
+nodes {
+  position {
+    x: 155.0
+    y: 255.0
+  }
+  scale {
+    x: 0.48738
+    y: 1.018093
+    z: 0.973333
+  }
+  size {
+    x: 200.0
+    y: 100.0
+  }
+  type: TYPE_BOX
+  id: "box"
+  inherit_alpha: true
+  alpha: 0.69
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    x: 252.0
+    y: 151.0
+  }
+  scale {
+    x: 0.48738
+    y: 1.018093
+    z: 0.973333
+  }
+  size {
+    x: 200.0
+    y: 100.0
+  }
+  type: TYPE_BOX
+  id: "box1"
+  inherit_alpha: true
+  alpha: 0.55
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    x: 49.0
+    y: 153.0
+  }
+  scale {
+    x: 0.48738
+    y: 1.018093
+    z: 0.973333
+  }
+  size {
+    x: 200.0
+    y: 100.0
+  }
+  type: TYPE_BOX
+  id: "box2"
+  inherit_alpha: true
+  alpha: 0.72
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    x: 148.0
+    y: 52.0
+  }
+  scale {
+    x: 0.48738
+    y: 1.018093
+    z: 0.973333
+  }
+  size {
+    x: 200.0
+    y: 100.0
+  }
+  type: TYPE_BOX
+  id: "box3"
+  inherit_alpha: true
+  alpha: 0.72
+  size_mode: SIZE_MODE_AUTO
+}
+material: "/builtins/materials/gui.material"
